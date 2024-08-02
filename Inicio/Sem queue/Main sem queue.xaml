@@ -1,0 +1,224 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_Url="http://localhost:8080/eshare" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Url" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1034.4,2016.8000000000002</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Java.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This is the main process, the robot will resquest documents to upload through a rest request and proceed to upload the returned documents to Eshare." DisplayName="Eshare robot" sap:VirtualizedContainerService.HintSize="635.2,1952" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="njl:JArray" Name="vUploadDocumentsJsonArray" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="572.8,56" sap2010:WorkflowViewState.IdRef="Comment_6" Text="// Request documents to upload" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetDocumentsToUpload workflow" sap:VirtualizedContainerService.HintSize="572.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="FilesUpload/Obter documentos upload.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="njl:JArray" x:Key="argNotasUpload">
+          <VisualBasicReference x:TypeArguments="njl:JArray" ExpressionText="vUploadDocumentsJsonArray" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:Int32" x:Key="out_StatusCode" />
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="572.8,75.2" sap2010:WorkflowViewState.IdRef="Comment_7" Text="// Iterates though the documents that were returned" />
+    <Sequence DisplayName="Extracts the attributes from the json" sap:VirtualizedContainerService.HintSize="572.8,1431.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ForEach x:TypeArguments="njl:JToken" CurrentIndex="{x:Null}" DisplayName="For Each object in jsonAray" sap:VirtualizedContainerService.HintSize="510.4,1319.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[vUploadDocumentsJsonArray]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="njl:JToken">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="njl:JToken" Name="jsonObject" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Verify__create_folder_structure_and_upload_files_to_eshare" sap:VirtualizedContainerService.HintSize="476.8,1131.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="s:String[]" Name="standardizedFiles" />
+                <Variable x:TypeArguments="x:String" Default="C:\Users\rpa0DHLEARQ2\Documents\test-files" Name="originFolder" />
+                <Variable x:TypeArguments="ui:Browser" Name="eShareWebpage" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LogJson_Mbot workflow" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="FilesUpload/Logar dados do json.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="njl:JToken" x:Key="in_JsonObject">[jsonObject]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:Comment sap:VirtualizedContainerService.HintSize="433.6,75.2" sap2010:WorkflowViewState.IdRef="Comment_8" Text="// Normaliza os nomes dos arquivos no diretorio target" />
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[originFolder]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[jsonObject("PastaOrigem").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke StandardizeFileName workflow" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="FilesUpload/Normalizar nome dos arquivos.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="RIOracle">[jsonObject("RIOracle").ToString]</InArgument>
+                  <InOutArgument x:TypeArguments="x:String" x:Key="PastaOrigem">[originFolder]</InOutArgument>
+                  <OutArgument x:TypeArguments="s:String[]" x:Key="standardizedFolders">[standardizedFiles]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:Comment sap:VirtualizedContainerService.HintSize="433.6,75.2" sap2010:WorkflowViewState.IdRef="Comment_9" Text="// Valida/cria a estrutura de pastas e faz o upload" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Verify, create and upload files to eshare." sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="FilesUpload/Abrir url por codigo tomador.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="CNPJTomador">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;CNPJTomador&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="CodigoTomador">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;CodigoTomador&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="DataDeVencimento">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;DataDeVencimentoeShare&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="PastaEspecifica">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;PastaEspecifica&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="RazaoSocialFornecedor">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;RazaoSocialFornecedor&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="NumeroDocumento">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;NumeroDocumento&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="RIOracle">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;RIOracle&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="s:String[]" x:Key="standardizedFileName">
+                    <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="standardizedFiles" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="originFolder">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="originFolder" />
+                  </InArgument>
+                  <OutArgument x:TypeArguments="ui:Browser" x:Key="oEShareWebpage">
+                    <VisualBasicReference x:TypeArguments="ui:Browser" ExpressionText="eShareWebpage" />
+                  </OutArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config" />
+                  <InArgument x:TypeArguments="x:String" x:Key="linhasComplemento" />
+                  <InOutArgument x:TypeArguments="x:String" x:Key="argeShareFolder" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:Comment sap:VirtualizedContainerService.HintSize="433.6,75.2" sap2010:WorkflowViewState.IdRef="Comment_10" Text="// Tira a screenshot dos arquivos e envia um email" />
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeScreenshot And SendEmail workflow" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="FilesUpload/Enviar email.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="email">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;Email&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="cnpjTomador">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;CNPJTomador&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="dataVencimento">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;DataDeVencimentoeShare&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="numeroDocumento">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;NumeroDocumento&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="razaoSocialFornecedor">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;RazaoSocialFornecedor&quot;).toString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="ui:Browser" x:Key="argEShareWebpage">
+                    <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="eShareWebpage" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="oracleRI">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="jsonObject(&quot;RIOracle&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="Config" />
+                  <InArgument x:TypeArguments="x:String" x:Key="processoExportacaoId" />
+                  <InArgument x:TypeArguments="x:String" x:Key="linhasComplemento" />
+                  <InArgument x:TypeArguments="x:String" x:Key="CodigoTomador" />
+                  <InArgument x:TypeArguments="x:String" x:Key="pastaorigem" />
+                  <InArgument x:TypeArguments="x:String" x:Key="documentoId" />
+                  <InArgument x:TypeArguments="x:String" x:Key="argeShareFolder" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+      </ui:ForEach>
+    </Sequence>
+  </Sequence>
+</Activity>

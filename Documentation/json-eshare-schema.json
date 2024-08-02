@@ -1,0 +1,65 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "additionalProperties": { "type": "string" },
+  "properties": {
+    "id": {
+      "type": "string",
+      "title": "id",
+      "pattern": "^(.*)$"
+    },
+    "cnpjFilial": {
+      "type": "string",
+      "title": "cnpjFilial",
+      "pattern": "^(.*)$"
+    },
+    "codigoTomador": {
+      "type": "string",
+      "title": "codigoTomador",
+      "pattern": "^(.*)$"
+    },
+    "cnpjFornecedor": {
+      "type": "string",
+      "title": "cnpjFornecedor",
+      "pattern": "^(.*)$"
+    },
+    "dataVencimentoEShare": {
+      "type": "string",
+      "title": "dataVencimentoEShare",
+      "pattern": "^(.*)$"
+    },
+    "emailSolicitante": {
+      "type": "string",
+      "title": "emailSolicitante",
+      "pattern": "^(.*)$"
+    },
+    "numeroDocumento": {
+      "type": "string",
+      "title": "numeroDocumento",
+      "pattern": "^(.*)$"
+    },
+    "pastaEspecifica": {
+      "type": "string",
+      "title": "pastaEspecifica",
+      "pattern": "^(.*)$"
+    },
+    "pastaOrigem": {
+      "type": "string",
+      "title": "pastaOrigem",
+      "pattern": "^(.*)$"
+    },
+    "razaoSocialFornecedor": {
+      "type": "string",
+      "title": "razaoSocialFornecedor",
+      "pattern": "^(.*)$"
+    },
+    "riOracle": {
+      "type": "string",
+      "title": "riOracle",
+      "pattern": "^(.*)$"
+    }
+  }
+}

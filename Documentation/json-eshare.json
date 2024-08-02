@@ -1,0 +1,28 @@
+[
+    {
+        "id": 149,
+        "cnpjFIlial": "02836056001501",
+        "cnpjFornecedor": "02232892000181",
+        "codigoTomador": "DHL",
+        "dataVencimentoEShare": null,
+        "emailSolicitante": null,
+        "numeroDocumento": "00053499",
+        "pastaEspecifica": null,
+        "pastaOrigem": null,
+        "razaoSocialFornecedor": "MACOR SEGURANÇA E VIGILÂNCIA LTDA",
+        "riOracle": null
+    },
+    {
+        "id": 145,
+        "cnpjFIlial": "02836056001501",
+        "cnpjFornecedor": "07705117000543",
+        "codigoTomador": "DHL",
+        "dataVencimentoEShare": null,
+        "emailSolicitante": null,
+        "numeroDocumento": "00011946",
+        "pastaEspecifica": null,
+        "pastaOrigem": null,
+        "razaoSocialFornecedor": "ESQUADRA TRANSPORTE DE VALORES & SEGURANÇA LTDA",
+        "riOracle": null
+    }
+]
